@@ -43,5 +43,12 @@
             }
         }
     ?>
+    <!-- admin login form section starts -->
+    <section class="form-container">
+        <form action="POST">
+            <h3>Entrar</h3>
+            <input type="text" name="name" maxlength="20" required placeholder="Digite seu email">
+        </form>
+    </section>
 </body>
 </html>
