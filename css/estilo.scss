@@ -16,3 +16,31 @@ $box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
     text-decoration: none;
     outline: none;
 }
+
+*::selection{
+    color: $--white;
+    background-color: $--main-color;
+}
+
+::-webkit-scrollbar{
+    width: 1rem;
+    height: 0.5rem;
+}
+
+::-webkit-scrollbar-track{
+    background-color: none;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: $--main-color;
+}
+
+html{
+    background-color: $--light-bg;
+}
+
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
