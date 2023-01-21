@@ -37,6 +37,11 @@ $box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
 html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
     background-color: $--light-bg;
 }
 
@@ -113,4 +118,77 @@ section{
             color: $--black;
         }
     }
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $--black;
+    font-size: 3rem;
+}
+
+.empty{
+    border: $border;
+    border-radius: 0.5rem;
+    background-color: $--white;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    color: $--red;
+    box-shadow: $box-shadow;
+}
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    form{
+        background-color: $--white;
+        border-radius: 0.5rem;
+        border: $border;
+        box-shadow: $box-shadow;
+        padding: 2rem;
+        text-align: center;
+        width: 50rem;
+
+        h3{
+            font-size: 2.5rem;
+            color: $--black;
+            margin-bottom: 1rem;
+        }
+
+        p{
+            margin: 1rem 0;
+            font-size: 2rem;
+            color: $--light-color;
+
+            span{
+                color: $--main-color;
+            }
+        }
+
+        .box{
+            width: 100%;
+            background-color: $--light-bg;
+            padding: 1.4rem;
+            font-size: 1.4rem;
+            color: $--black;
+            margin: 1rem 0;
+            border: $border;
+            font-size: 1.8rem;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+.header{
+    position: sticky;
+    top: 0; left: 0; right:0;
+    background-color: $--white;
+    box-shadow: $box-shadow;
+    z-index: 1000;
+    border-bottom: $border;
 }
