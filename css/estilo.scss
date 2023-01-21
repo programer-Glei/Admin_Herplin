@@ -59,13 +59,58 @@ section{
 }
 
 .btn{
-    background-color: $--red;
+    background-color: $--main-color;
+
+    &:hover{
+        background-color: $--black;
+    }
 }
 
 .delete-btn{
     background-color: $--red;
+
+    &:hover{
+        background-color: $--black;
+    }
 }
 
 .option-btn{
     background-color: $--orange;
+
+    &:hover{
+        background-color: $--black;
+    }
+}
+
+.flex-btn{
+    display: flex;
+    gap: 1rem;
+}
+
+.message{
+    position: sticky;
+    top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: $--light-bg;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+
+    span{
+        font-size: 2rem;
+        color: $--black;
+    }
+
+    i{
+        font-size: 2.5rem;
+        color: $--red;
+        cursor: pointer;
+
+        &:hover{
+            color: $--black;
+        }
+    }
 }
