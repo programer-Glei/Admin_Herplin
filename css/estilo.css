@@ -41,4 +41,28 @@ section {
   margin: 0 auto;
   padding: 2rem;
 }
+
+.btn, .delete-btn, .option-btn {
+  display: block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 1.2rem 3rem;
+  text-align: center;
+}
+
+.btn {
+  background-color: #e74c3c;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+}
+
+.option-btn {
+  background-color: #f39c12;
+}
 /*# sourceMappingURL=estilo.css.map */

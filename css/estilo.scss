@@ -2,6 +2,7 @@
 
 $--main-color:#4834d4;
 $--red:#e74c3c;
+$--orange:#f39c12;
 $--black:#34495e;
 $--white:#fff;
 $--light-bg:#f5f5f5;
@@ -43,4 +44,28 @@ section{
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+.btn,.delete-btn,.option-btn{
+    display: block;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.8rem;
+    color: $--white;
+    padding: 1.2rem 3rem;
+    text-align: center;
+}
+
+.btn{
+    background-color: $--red;
+}
+
+.delete-btn{
+    background-color: $--red;
+}
+
+.option-btn{
+    background-color: $--orange;
 }
