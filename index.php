@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: text/html; charset=utf-8');
     include 'components/connect.php';
     session_start();
     if(isset($_POST['submit'])){
@@ -47,9 +48,16 @@
     <!-- admin login form section starts -->
     <section class="form-container">
         <form action="POST">
-            <h3>Entrar</h3>
-            <input type="text" name="name" maxlength="20" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
-            <input type="password" name="pass" maxlength="20" required placeholder="Digite sua senha" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
+            <h1>Portal Admin</h1>
+            <p class="link">Admin novo? <a href="register_admin.php">Registrar-se</a></p>
+            <div class="input-box">
+                <label>Endereço de e-mail</label>
+                <input type="text" name="name" maxlength="20" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
+            </div>
+            <div class="input-box">
+                <label>Senha</label>
+                <input type="password" name="pass" maxlength="20" required placeholder="Digite sua senha" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
+            </div>
             <input type="submit" value="Login" class="btn" name="submit">
         </form>
     </section>

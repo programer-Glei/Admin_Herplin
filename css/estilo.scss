@@ -151,13 +151,30 @@ section{
         border: $border;
         box-shadow: $box-shadow;
         padding: 2rem;
-        text-align: center;
+        text-align: left;
         width: 50rem;
 
-        h3{
-            font-size: 2.5rem;
+        h1{
+            font-size: 3.2rem;
             color: $--black;
-            margin-bottom: 1rem;
+            margin-bottom: 2.4rem;
+            text-align: center;
+        }
+
+        .link{
+            font-weight: 400;
+            font-size: 2rem;
+            color: initial;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-box{
+            label{
+                font-size: 1.4rem;
+                font-weight: 400;
+                line-height: 2rem;
+                color: rgb(26, 26, 26);
+            }
         }
 
         p{
