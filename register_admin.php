@@ -74,7 +74,11 @@
     <!-- register admin section starts -->
     <section class="form-container">
         <form action="" method="POST">
-            
+            <h1>Novo registro</h1>
+            <input type="email" name="name" maxlength="20" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <input type="password" name="pass" maxlength="20" required placeholder="Digite sua senha" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <input type="password" name="cpass" maxlength="20" required placeholder="Comfirme sua senha" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <input type="submit" value="Cadastrar" name="submit" class="btn">
         </form>
     </section>
 </body>
