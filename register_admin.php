@@ -5,31 +5,55 @@
 
     if(isset($_SESSION['admin_id'])){
         $admin_id = $_SESSION['admin_id'];
+
+        if(isset($_POST['submit'])){
+            $name = $_POST['name'];
+            $name = filter_var($name, FILTER_SANITIZE_STRING);
+            $pass = $_POST['pass'];
+            $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+            $cpass = $_POST['cpass'];
+            $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+    
+            $select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
+            $select_admin->execute([$name]);
+    
+            if($select_admin->rowCount() > 0){
+                $message[] = 'Usuário já existe!';
+            }else{
+                if($pass != $cpass){
+                    $message[] = 'Confirmação da senha tá diferente!';
+                }else{
+                    $insert_admin = $conn->prepare("INSERT INTO `admin`(name, password) VALUES(?,?)");
+                    $insert_admin->execute([$name,$cpass]);
+                    $message[] = 'Novo administrador registrado!';
+                }
+            }
+        }
     }else{
         $admin_id = '';
-    }
 
-    if(isset($_POST['submit'])){
-        $name = $_POST['name'];
-        $name = filter_var($name, FILTER_SANITIZE_STRING);
-        $pass = $_POST['pass'];
-        $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-        $cpass = $_POST['cpass'];
-        $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
-
-        $select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
-        $select_admin->execute([$name]);
-
-        if($select_admin->rowCount() > 0){
-            $message[] = 'Usuário já existe!';
-        }else{
-            if($pass != $cpass){
-                $message[] = 'Confirmação da senha tá diferente!';
+        if(isset($_POST['submit'])){
+            $name = $_POST['name'];
+            $name = filter_var($name, FILTER_SANITIZE_STRING);
+            $pass = $_POST['pass'];
+            $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+            $cpass = $_POST['cpass'];
+            $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+    
+            $select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
+            $select_admin->execute([$name]);
+    
+            if($select_admin->rowCount() > 0){
+                $message[] = 'Usuário já existe!';
             }else{
-                $insert_admin = $conn->prepare("INSERT INTO `admin`(name, password) VALUES(?,?)");
-                $insert_admin->execute([$name,$cpass]);
-                $message[] = 'Novo administrador registrado!';
-                header('location:dashboard.php');
+                if($pass != $cpass){
+                    $message[] = 'Confirmação da senha tá diferente!';
+                }else{
+                    $insert_admin = $conn->prepare("INSERT INTO `admin`(name, password) VALUES(?,?)");
+                    $insert_admin->execute([$name,$cpass]);
+                    $message[] = 'Novo administrador registrado!';
+                    header('location:index.php');
+                }
             }
         }
     }
@@ -46,6 +70,12 @@
     <title>Criar login - Herplim</title>
 </head>
 <body>
-    
+    <?php 'components/admin_header'?>
+    <!-- register admin section starts -->
+    <section class="form-container">
+        <form action="" method="POST">
+            
+        </form>
+    </section>
 </body>
 </html>
