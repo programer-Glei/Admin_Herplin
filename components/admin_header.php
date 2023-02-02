@@ -21,5 +21,12 @@
             <div id="menu-btn" class="fas fa-bars"></div>
             <div id="user-btn" class="fas fa-user"></div>
         </div>
+        <div class="profile">
+            <?php
+                $select_profile = $conn->prepare("SELECT * FROM `admin` WHERE id = ?");
+                $select_profile->execute([$admin_id]);
+                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            ?>
+        </div>
     </section>
 </header>
