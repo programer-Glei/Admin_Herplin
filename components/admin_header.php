@@ -13,7 +13,13 @@
             <a href="dashboard.php">Home</a>
             <a href="products.php">Produtos</a>
             <a href="placed_orders.php">Pedidos</a>
-            <a href="admin_accounts.php">Admins</a>
+            <a href="admin_accounts.php">Administradores</a>
+            <a href="user_accounts.php">Usuários</a>
+            <a href="messages.php">Mensagens</a>
         </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+        </div>
     </section>
 </header>
