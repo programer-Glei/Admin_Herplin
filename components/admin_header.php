@@ -27,6 +27,13 @@
                 $select_profile->execute([$admin_id]);
                 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
             ?>
+            <p><?=$fetch_profile['name'];?></p>
+            <a href="update_profile.php" class="btn">Atualizar Perfil</a>
+            <div class="flex-btn">
+                <a href="admin_login.php" class="option-btn">Login</a>
+                <a href="register_admin.php" class="option-btn">Registrar</a>
+            </div>
+            <a href="admin_logout.php" onclick="return confirm('Sair deste site');" class="delete-btn">Sair</a>
         </div>
     </section>
 </header>
