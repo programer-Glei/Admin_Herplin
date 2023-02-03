@@ -52,7 +52,7 @@
             <p class="link">Admin novo? <a href="register_admin.php">Registrar-se</a></p>
             <div class="input-box">
                 <label>Endereço de e-mail</label>
-                <input type="email" name="name" maxlength="20" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
+                <input type="text" name="name" maxlength="20" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
             </div>
             <div class="input-box">
                 <label>Senha</label>

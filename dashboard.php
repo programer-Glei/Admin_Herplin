@@ -30,6 +30,7 @@
             <div class="box">
                 <h3>Bem-vindo!</h3>
                 <p><?=$fetch_profile['name']; ?></p>
+                <a href="update_profile.php" class="btn">Atualizar Perfil</a>
             </div>
         </div>
     </section>
