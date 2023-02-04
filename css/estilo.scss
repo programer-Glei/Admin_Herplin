@@ -218,6 +218,29 @@ section{
         .logo{
             font-size: 2.5rem;
             color: $--black;
+
+            span{
+                color: $--main-color;
+            }
+        }
+
+        .navbar{
+            a{
+                margin: 0 1rem;
+                font-size: 2rem;
+                color: $--light-color;
+
+                &:hover{
+                    color: $--main-color;
+                }
+            }
+        }
+
+        .icons > *{
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: $--light-color;
+            margin-left: 1.7rem;
         }
     }
 }

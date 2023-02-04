@@ -242,4 +242,25 @@ section {
   font-size: 2.5rem;
   color: #34495e;
 }
+
+.header .flex .logo span {
+  color: #4834d4;
+}
+
+.header .flex .navbar a {
+  margin: 0 1rem;
+  font-size: 2rem;
+  color: #999;
+}
+
+.header .flex .navbar a:hover {
+  color: #4834d4;
+}
+
+.header .flex .icons > * {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #999;
+  margin-left: 1.7rem;
+}
 /*# sourceMappingURL=estilo.css.map */
