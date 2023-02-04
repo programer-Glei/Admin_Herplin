@@ -4,6 +4,8 @@
     session_start();
     if(isset($_POST['submit'])){
 
+        echo $_POST['submit'];
+
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $pass = $_POST['pass'];
@@ -47,7 +49,7 @@
     ?>
     <!-- admin login form section starts -->
     <section class="form-container">
-        <form action="POST">
+        <form action="" method="POST">
             <h1>Portal Admin</h1>
             <p class="link">Admin novo? <a href="register_admin.php">Registrar-se</a></p>
             <div class="input-box">

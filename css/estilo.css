@@ -224,4 +224,22 @@ section {
   z-index: 1000;
   border-bottom: 0.2rem solid #34495e;
 }
+
+.header .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.header .flex .logo {
+  font-size: 2.5rem;
+  color: #34495e;
+}
 /*# sourceMappingURL=estilo.css.map */
