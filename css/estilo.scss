@@ -266,6 +266,39 @@ section{
                 text-align: center;
                 color: $--black;
             }
+
+            &.active{
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        transform: translateY(1rem);
+    }
+}
+
+#menu-btn {
+    display: none;
+}
+
+.dashboard{
+    .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+        gap: 1.5rem;
+        align-items: flex-start;
+
+        .box{
+            text-align: center;
+            background-color: $--white;
+            border: $border;
+            box-shadow: $box-shadow;
+            border-radius: 0.5rem;
+            text-align: center;
+            padding: 1.5rem;
         }
     }
 }

@@ -291,4 +291,48 @@ section {
   text-align: center;
   color: #34495e;
 }
+
+.header .flex .profile.active {
+  display: inline-block;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+  }
+}
+
+#menu-btn {
+  display: none;
+}
+
+.dashboard .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(27rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.dashboard .box-container .box {
+  text-align: center;
+  background-color: #fff;
+  border: 0.2rem solid #34495e;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 1.5rem;
+}
 /*# sourceMappingURL=estilo.css.map */
