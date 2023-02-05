@@ -241,6 +241,31 @@ section{
             cursor: pointer;
             color: $--light-color;
             margin-left: 1.7rem;
+
+            &:hover{
+                color: $--main-color;
+            }
+        }
+
+        .profile{
+            position: absolute;
+            top: 125%; right: 2rem;
+            background-color: $--white;
+            box-shadow: $box-shadow;
+            border: $border;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            padding-top: 1rem;
+            width: 30rem;
+            display: none;
+            animation: fadeIn 0.2s linear;
+
+            p{
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                text-align: center;
+                color: $--black;
+            }
         }
     }
 }

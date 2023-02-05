@@ -263,4 +263,32 @@ section {
   color: #999;
   margin-left: 1.7rem;
 }
+
+.header .flex .icons > *:hover {
+  color: #4834d4;
+}
+
+.header .flex .profile {
+  position: absolute;
+  top: 125%;
+  right: 2rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0.2rem solid #34495e;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  padding-top: 1rem;
+  width: 30rem;
+  display: none;
+  -webkit-animation: fadeIn 0.2s linear;
+          animation: fadeIn 0.2s linear;
+}
+
+.header .flex .profile p {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #34495e;
+}
 /*# sourceMappingURL=estilo.css.map */
