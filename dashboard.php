@@ -43,6 +43,17 @@
                 ?>
                 <h3><span>R$</span><?= $total_pendings; ?></h3>
                 <p>Total de pendentes</p>
+                <a href="placed_orders.php" class="btn">Ver pedidos</a>
+            </div>
+            <div class="box">
+                <?php
+                    $total_completes = 0;
+                    $select_completes = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+                    $select_completes->execute(['completed']);
+                    while($fetch_completes = $select_completes->fetch(PDO::FETCH_ASSOC)){
+                        $total_completes += $fetch_completes['total_price'];
+                    }
+                ?>
             </div>
         </div>
     </section>
