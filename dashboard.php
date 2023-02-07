@@ -32,6 +32,18 @@
                 <p><?=$fetch_profile['name']; ?></p>
                 <a href="update_profile.php" class="btn">Atualizar Perfil</a>
             </div>
+            <div class="box">
+                <?php
+                    $total_pendings = 0;
+                    $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+                    $select_pendings->execute(['pending']);
+                    while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
+                        $total_pendings += $fetch_pendings['total_price'];
+                    }
+                ?>
+                <h3><span>R$</span><?= $total_pendings; ?></h3>
+                <p>Total de pendentes</p>
+            </div>
         </div>
     </section>
 </body>
