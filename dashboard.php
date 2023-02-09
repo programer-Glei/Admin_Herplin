@@ -54,6 +54,15 @@
                         $total_completes += $fetch_completes['total_price'];
                     }
                 ?>
+                <h3><span>R$</span><?= $total_completes;?></h3>
+                <p>total concluído</p>
+                <a href="placed_orders.php">Ver pedidos</a>
+            </div>
+            <div class="box">
+                <?php
+                    $select_orders = $conn->prepare("SELECT * FROM `orders`");
+                    $select_orders->execute();
+                ?>
             </div>
         </div>
     </section>
