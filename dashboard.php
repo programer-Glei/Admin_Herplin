@@ -56,12 +56,22 @@
                 ?>
                 <h3><span>R$</span><?= $total_completes;?></h3>
                 <p>total concluído</p>
-                <a href="placed_orders.php">Ver pedidos</a>
+                <a href="placed_orders.php" class="btn">Ver pedidos</a>
             </div>
             <div class="box">
                 <?php
                     $select_orders = $conn->prepare("SELECT * FROM `orders`");
                     $select_orders->execute();
+                    $number_of_orders = $select_orders->rowCount();
+                ?>
+                <h3><?= $number_of_orders;?></h3>
+                <p>Pedidos totais</p>
+                <a href="placed_orders.php" class="btn">Ver pedidos</a>
+            </div>
+            <div class="box">
+                <?php
+                    $select_products = $conn->prepare("SELECT * FROM `products`");
+                    $select_products->execute();
                 ?>
             </div>
         </div>
