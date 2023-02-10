@@ -75,8 +75,18 @@
                     $number_of_products = $select_products->rowCount();
                 ?>
                 <h3><?= $number_of_products;?></h3>
-                <p>produtos adicionados</p>
+                <p>Produtos adicionados</p>
                 <a href="products.php" class="btn">ver produtos</a>
+            </div>
+            <div class="box">
+                <?php
+                    $select_users = $conn->prepare("SELECT * FROM `users`");
+                    $select_users->execute();
+                    $number_of_users = $select_users->rowCount();
+                ?>
+                <h3><?= $number_of_users;?></h3>
+                <p>Contas de usuários</p>
+                <a href="users_accounts.php" class="btn">Ver usuários</a>
             </div>
         </div>
     </section>
