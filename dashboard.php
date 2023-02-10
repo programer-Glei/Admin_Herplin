@@ -72,7 +72,11 @@
                 <?php
                     $select_products = $conn->prepare("SELECT * FROM `products`");
                     $select_products->execute();
+                    $number_of_products = $select_products->rowCount();
                 ?>
+                <h3><?= $number_of_products;?></h3>
+                <p>produtos adicionados</p>
+                <a href="products.php" class="btn">ver produtos</a>
             </div>
         </div>
     </section>
