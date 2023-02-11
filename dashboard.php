@@ -96,9 +96,22 @@
                 ?>
                 <h3><?= $number_of_admins;?></h3>
                 <p>Contas de Adm</p>
-                <a href="" class="btn">Ver administradores</a>
+                <a href="admin_accounts.php" class="btn">Ver administradores</a>
+            </div>
+            <div class="box">
+                <?php
+                    $select_messages = $conn->prepare("SELECT * FROM `messages`");
+                    $select_messages->execute();
+                    $number_of_messages = $select_messages->rowCount();
+                ?>
+                <h3><?= $number_of_messages;?></h3>
+                <p>Nova mensagem</p>
+                <a href="messages.php" class="btn">Ver mensagens</a>
             </div>
         </div>
     </section>
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
