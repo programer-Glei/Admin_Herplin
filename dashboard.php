@@ -95,8 +95,8 @@
                     $number_of_admins = $select_admins->rowCount();
                 ?>
                 <h3><?= $number_of_admins;?></h3>
-                <p>Contas de Adm</p>
-                <a href="admin_accounts.php" class="btn">Ver administradores</a>
+                <p>Funcionários</p>
+                <a href="admin_accounts.php" class="btn">Ver Funcionários</a>
             </div>
             <div class="box">
                 <?php
