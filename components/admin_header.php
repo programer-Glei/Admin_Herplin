@@ -29,7 +29,7 @@
             ?>
             <p><?=$fetch_profile['name'];?></p>
             <a href="update_profile.php" class="btn">Detalhes do perfil</a>
-            <a href="admin_logout.php" onclick="return confirm('Sair deste site');" class="delete-btn">Sair</a>
+            <a href="components/admin_logout.php" onclick="return confirm('Sair deste site');" class="delete-btn">Sair</a>
         </div>
     </section>
 </header>
