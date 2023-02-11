@@ -88,6 +88,16 @@
                 <p>Contas de usuários</p>
                 <a href="users_accounts.php" class="btn">Ver usuários</a>
             </div>
+            <div class="box">
+                <?php
+                    $select_admins = $conn->prepare("SELECT * FROM `admin`");
+                    $select_admins->execute();
+                    $number_of_admins = $select_admins->rowCount();
+                ?>
+                <h3><?= $number_of_admins;?></h3>
+                <p>Contas de Adm</p>
+                <a href="" class="btn">Ver administradores</a>
+            </div>
         </div>
     </section>
 </body>
