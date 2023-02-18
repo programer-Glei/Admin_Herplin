@@ -30,7 +30,14 @@
         $new_pass = filter_var($new_pass, FILTER_SANITIZE_STRING);
         $confirm_pass = $_POST['confirm_pass'];
         $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
-        
+
+        if($new_pass != $confirm_pass){
+            $message[] = 'senha está diferente';
+        }else{
+            $update_pass = $conn->prepare("UPDATE `admin` SET password = ? WHERE id = ?");
+            $update_pass->execute([$confirm_pass,$admin_id]);
+            $message[] = 'Senha alterada com sucesso!';
+        }
 
     }
 ?>
