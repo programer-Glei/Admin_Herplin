@@ -12,6 +12,19 @@
 
     if(isset($_POST['submit'])){
 
+        $name = $_POST['name'];
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+
+        if(!empty($name)){
+            $select_name = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
+            $select_name->execute([$name]);
+            if($select_name->rowCount() > 0){
+                $message[] = 'email já utilizado'
+            }else{
+                
+            }
+        }
+
     }
 ?>
 
