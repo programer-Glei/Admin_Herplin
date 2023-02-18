@@ -19,11 +19,18 @@
             $select_name = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
             $select_name->execute([$name]);
             if($select_name->rowCount() > 0){
-                $message[] = 'email já utilizado'
+                $message[] = 'email já utilizado';
             }else{
-                
+                $update_name = $conn->prepare("UPDATE `admin` SET name = ? WHERE id = ?");
+                $update_name->execute([$name, $admin_id]);
             }
         }
+
+        $new_pass = $_POST['new_pass'];
+        $new_pass = filter_var($new_pass, FILTER_SANITIZE_STRING);
+        $confirm_pass = $_POST['confirm_pass'];
+        $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
+        
 
     }
 ?>
