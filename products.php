@@ -81,6 +81,11 @@
             <h3>Adicionar produto</h3>
             <input type="text" required name="name" maxlength="100" class="box" placeholder="Digite nome do produto">
             <input type="text" name="price" required onkeypress="if(this.value.length == 10) return false;" class="box">
+            <select name="category" class="box" required>
+                <option value="" disabled selected>Selecionar categoria</option>
+                <option value="main dish">Prato principal</option>
+                <option value="fast food">Comida rápida</option>
+            </select>
         </form>
     </section>
 </body>
