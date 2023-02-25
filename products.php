@@ -79,6 +79,8 @@
     <section class="add-products">
         <form action="" method="POST" enctype="multipart/form-data">
             <h3>Adicionar produto</h3>
+            <input type="text" required name="name" maxlength="100" class="box" placeholder="Digite nome do produto">
+            <input type="text" name="price" required onkeypress="if(this.value.length == 10) return false;" class="box">
         </form>
     </section>
 </body>
