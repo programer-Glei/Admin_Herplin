@@ -85,8 +85,22 @@
                 <option value="" disabled selected>Selecionar categoria</option>
                 <option value="main dish">Prato principal</option>
                 <option value="fast food">Comida rápida</option>
+                <option value="drinks">Bebidas</option>
+                <option value="desserts">Sobremesa</option>
+                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/wep" required>
+                <input type="submit" value="Adicionar produto" name="add_product" class="btn">
             </select>
         </form>
+    </section>
+    <!-- add products section ends -->
+
+    <!-- show products section starts -->
+    <section class="show-products" style="padding-top:0;">
+        <div class="box-container">
+            <?php
+                
+            ?>
+        </div>
     </section>
 </body>
 </html>
