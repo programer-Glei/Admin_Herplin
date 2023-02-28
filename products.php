@@ -110,6 +110,12 @@
                 <img src="uploaded_img/<?= $fetch_products['image'];?>" alt="">
                 <div class="flex">
                     <div class="price"><span>R$</span><?= $fetch_products['price'];?></div>
+                    <div class="category"><?= $fetch_products['category']; ?></div>
+                </div>
+                <div class="name"><?= $fetch_products['name']; ?></div>
+                <div class="flex-btn">
+                    <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">Atualizar</a>
+                    <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Deletar este produto');">Excluir</a>
                 </div>
             </div>
         </div>
