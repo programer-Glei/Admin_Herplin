@@ -99,7 +99,19 @@
         <div class="box-container">
             <?php
                 $show_products = $conn->prepare("SELECT * FROM `products`");
+                $show_products->execute();
+                if($show_products->rowCount() > 0){
+                    while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){
+
+                    }
+                }
             ?>
+            <div class="box">
+                <img src="uploaded_img/<?= $fetch_products['image'];?>" alt="">
+                <div class="flex">
+                    <div class="price"><span>R$</span><?= $fetch_products['price'];?></div>
+                </div>
+            </div>
         </div>
     </section>
 </body>
