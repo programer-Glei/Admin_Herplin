@@ -98,7 +98,7 @@
     <section class="show-products" style="padding-top:0;">
         <div class="box-container">
             <?php
-                
+                $show_products = $conn->prepare("SELECT * FROM `products`");
             ?>
         </div>
     </section>
