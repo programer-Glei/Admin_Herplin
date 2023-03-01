@@ -102,9 +102,6 @@
                 $show_products->execute();
                 if($show_products->rowCount() > 0){
                     while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){
-
-                    }
-                }
             ?>
             <div class="box">
                 <img src="uploaded_img/<?= $fetch_products['image'];?>" alt="">
@@ -118,7 +115,14 @@
                     <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Deletar este produto');">Excluir</a>
                 </div>
             </div>
+            <?php
+                    }
+                }else{
+                    echo '<p class="empty">Nenhum produto adicionado!</p>';
+                }
+            ?>
         </div>
     </section>
+    <!-- show products section ends -->
 </body>
 </html>
