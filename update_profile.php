@@ -62,7 +62,7 @@
     <!-- admin profile update section starts -->
     <section class="form-container">
         <form action="" method="POST">
-            <h3>Atualizar Perfil</h3>
+            <h1>Atualizar Perfil</h1>
             <input type="text" name="name" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')" placeholder="<?= $fetch_profile['name']; ?>">
             <input type="password" name="new_pass" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')" placeholder="Digitar nova senha">
             <input type="password" name="confirm_pass" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')" placeholder="Confirmar nova senha">

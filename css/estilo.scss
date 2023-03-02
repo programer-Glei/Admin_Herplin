@@ -321,3 +321,33 @@ section{
         }
     }
 }
+
+.add-products{
+    form{
+        margin: 0 auto;
+        max-width: 50rem;
+        background-color: $--white;
+        border-radius: 0.5rem;
+        box-shadow: $box-shadow;
+        border: $border;
+        padding: 2rem;
+        text-align: center;
+
+        h3{
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: $--black;
+        }
+
+        .box{
+            background-color: $--light-bg;
+            border: $border;
+            width: 100%;
+            padding: 1.4rem;
+            font-size: 1.8rem;
+            color: $--black;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+    }
+}
