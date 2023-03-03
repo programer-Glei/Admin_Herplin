@@ -373,6 +373,17 @@ section{
                 object-fit: contain;
                 margin-bottom: 1rem;
             }
+
+            .name{
+                font-size: 2rem;
+                color: $--black;
+                padding: 1rem 0;
+            }
+
+            .flex{
+                display: flex;
+                align-items: center;
+            }
         }
     }
 }
