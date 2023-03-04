@@ -124,5 +124,8 @@
         </div>
     </section>
     <!-- show products section ends -->
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
