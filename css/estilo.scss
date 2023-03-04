@@ -383,6 +383,23 @@ section{
             .flex{
                 display: flex;
                 align-items: center;
+                gap: 1rem;
+                justify-content: space-between;
+
+                .category{
+                    font-size: 1.8rem;
+                    color: $--main-color;
+                }
+
+                .price{
+                    font-size: 2rem;
+                    color: $--black;
+                    margin: 0.5rem 0;
+
+                    span{
+                        font-size: 1.5rem;
+                    }
+                }
             }
         }
     }
