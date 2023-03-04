@@ -23,7 +23,7 @@
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
-        $image_folder = 'uploaded_img'.$image;
+        $image_folder = 'uplaoded_img'.$image;
 
         $select_products = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
         $select_products->execute([$name]);
@@ -50,7 +50,7 @@
         $delete_product_image = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
         $delete_product_image->execute([$delete_id]);
         $fetch_delete_image = $delete_product_image->fetch(PDO::FETCH_ASSOC);
-        unlink('uploaded_img').$fetch_delete_image['image'];
+        unlink('uplaoded_img').$fetch_delete_image['image'];
         $delete_product = $conn->prepare("DELETE FROM `products` WHERE id = ?");
         $delete_product->execute([$delete_id]);
         $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE pid = ?");
