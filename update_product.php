@@ -82,6 +82,13 @@
             <span>Atualizar nome</span>
             <input type="text" required placeholder="Digitar nome do produto" name="name" maxlength="100" class="box" value="<?= $fetch_products['name']; ?>">
             <span>Atualizar preço</span>
+            <input type="text" required placeholder="Digitar preço" name="price" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_products['price']; ?>">
+            <span>Atualizar categoria</span>
+            <select name="category" id="" class="box" required>
+                <option selected value="<?= $fetch_products['category']; ?>"><?= $fetch_products['category']; ?></option>
+                <option value="main dish">Prato principal</option>
+                <option value="fast food">Comida rápida</option>
+            </select>
         </form>
     </section>
 </body>
