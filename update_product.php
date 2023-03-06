@@ -60,6 +60,29 @@
     <title>Atualizar Produtos</title>
 </head>
 <body>
-    
+    <?php include 'components/admin_header.php' ?>
+
+    <!-- update product section starts -->
+    <section class="update-product">
+        <h1 class="heading">Atualizar produto</h1>
+        <?php
+            $update_id = $_GET['update'];
+            $show_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+            $show_products->execute([$update_id]);
+            if($show_products->rowCount() > 0){
+                while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){
+
+                }
+            }
+        ?>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+            <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
+            <img src="uplaoded_img/<?= $fetch_products['image']; ?>" alt="">
+            <span>Atualizar nome</span>
+            <input type="text" required placeholder="Digitar nome do produto" name="name" maxlength="100" class="box" value="<?= $fetch_products['name']; ?>">
+            <span>Atualizar preço</span>
+        </form>
+    </section>
 </body>
 </html>
