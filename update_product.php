@@ -71,9 +71,6 @@
             $show_products->execute([$update_id]);
             if($show_products->rowCount() > 0){
                 while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){
-
-                }
-            }
         ?>
         <form action="" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
@@ -88,8 +85,26 @@
                 <option selected value="<?= $fetch_products['category']; ?>"><?= $fetch_products['category']; ?></option>
                 <option value="main dish">Prato principal</option>
                 <option value="fast food">Comida rápida</option>
+                <option value="drinks">Bebidas</option>
+                <option value="desserts">Sobremesa</option>
             </select>
+            <span>Atualizar Imagem</span>
+            <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
+            <div class="flex-btn">
+                <input type="submit" value="Atualizar" class="btn" name="update">
+                <a href="products.php" class="option-btn">Voltar</a>
+            </div>
         </form>
+        <?php
+                }
+            }else{
+                echo '<p class="empty">Nenhum produto adicionado ainda!</p>'
+            }
+        ?>
     </section>
+    <!-- update product section ends -->
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
