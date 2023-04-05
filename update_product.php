@@ -31,7 +31,7 @@
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
-        $image_folder = 'uplaoded_img'.$image;
+        $image_folder = 'uplaoded_img/'.$image;
 
         if(!empty($image)){
             if($image_size > 2000000){
@@ -40,7 +40,7 @@
                 $update_image = $conn->prepare("UPDATE `products` SET image = ? WHERE id = ?");
                 $update_image->execute([$image, $pid]);
                 move_uploaded_file($image_tmp_name, $image_folder);
-                unlink('uplaoded_img'.$old_image);
+                unlink('uplaoded_img/'.$old_image);
                 $message[] = 'imagem atualizada!';
             }
         }
@@ -98,7 +98,7 @@
         <?php
                 }
             }else{
-                echo '<p class="empty">Nenhum produto adicionado ainda!</p>'
+                echo '<p class="empty">Nenhum produto adicionado ainda!</p>';
             }
         ?>
     </section>

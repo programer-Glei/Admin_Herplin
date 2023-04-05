@@ -23,7 +23,7 @@
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
-        $image_folder = 'uplaoded_img'.$image;
+        $image_folder = 'uplaoded_img/'.$image;
 
         $select_products = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
         $select_products->execute([$name]);
@@ -34,7 +34,7 @@
             if($image_size > 2000000){
                 $message[] = 'O tamanho da imagem é muito grande';
             }else{
-                move_uploaded_file($image_tmp_name,$image_folder);
+                move_uploaded_file($image_tmp_name, $image_folder);
 
                 $insert_product = $conn->prepare("INSERT INTO `products`(name, category, price, image) VALUES(?,?,?,?)");
                 $insert_product->execute([$name,$category,$price,$image]);
@@ -87,7 +87,7 @@
                 <option value="fast food">Comida rápida</option>
                 <option value="drinks">Bebidas</option>
                 <option value="desserts">Sobremesa</option>
-                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/wep" required>
+                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
                 <input type="submit" value="Adicionar produto" name="add_product" class="btn">
             </select>
         </form>
