@@ -431,5 +431,15 @@ section{
             border-radius: 0.5rem;
             margin: 1rem 0;
         }
+
+        textarea{
+            height: 15rem;
+            resize: none;
+        }
+
+        span{
+            font-size: 1.7rem;
+            color: $--black;
+        }
     }
 }
