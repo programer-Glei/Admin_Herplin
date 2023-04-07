@@ -409,4 +409,27 @@ section{
     margin: 0 auto;
     max-width: 50rem;
     background-color: $--white;
+    border-radius: 0.5rem;
+    box-shadow: $box-shadow;
+    border: $border;
+    padding: 2rem;
+
+    form{
+        img{
+            height: 25rem;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .box{
+            background-color: $--light-bg;
+            border: $border;
+            width: 100%;
+            padding: 1.4rem;
+            font-size: 1.8rem;
+            color: $--black;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+    }
 }
