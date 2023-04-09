@@ -104,7 +104,7 @@
                     while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){
             ?>
             <div class="box">
-                <img src="uploaded_img/<?= $fetch_products['image'];?>" alt="">
+                <img src="uplaoded_img/<?= $fetch_products['image'];?>" alt="">
                 <div class="flex">
                     <div class="price"><span>R$</span><?= $fetch_products['price'];?></div>
                     <div class="category"><?= $fetch_products['category']; ?></div>

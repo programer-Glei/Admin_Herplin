@@ -40,8 +40,12 @@
                 $update_image = $conn->prepare("UPDATE `products` SET image = ? WHERE id = ?");
                 $update_image->execute([$image, $pid]);
                 move_uploaded_file($image_tmp_name, $image_folder);
-                unlink('uplaoded_img/'.$old_image);
-                $message[] = 'imagem atualizada!';
+                if(empty($old_image)){
+                    $message[] = 'imagem atualizada!';
+                }else{
+                    unlink('uplaoded_img/'.$old_image);
+                    $message[] = 'imagem atualizada!';
+                }
             }
         }
     }
