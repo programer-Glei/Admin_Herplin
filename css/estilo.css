@@ -487,4 +487,44 @@ section {
   font-size: 1.7rem;
   color: #34495e;
 }
+
+.placed-orders {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (33rem)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.placed-orders .box-container .box {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0.2rem solid #34495e;
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+.placed-orders .box-container .box p {
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  color: #34495e;
+}
+
+.placed-orders .box-container .box p span {
+  color: #4834d4;
+}
+
+.placed-orders .box-container .box .drop-down {
+  width: 100%;
+  margin: 1rem 0;
+}
 /*# sourceMappingURL=estilo.css.map */

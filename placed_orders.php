@@ -68,7 +68,7 @@
                 <p>Tipo de pagamento: <span><?= $fecth_orders['method']; ?></span></p>
                 <form action="" method="POST">
                     <input type="hidden" name="order_id" value="<?= $fecth_orders['id'];?>">
-                    <select name="payment_status" id="" class="drop-dow">
+                    <select name="payment_status" id="" class="drop-down">
                         <option value="" selected disabled><?= $fecth_orders['payment_status'];?></option>
                         <option value="pending">Pendente</option>
                         <option value="completed">Pago</option>
