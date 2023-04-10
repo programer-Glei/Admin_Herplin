@@ -1,5 +1,6 @@
 
 <?php
+    header('Content-Type: text/html; charset=utf-8');
     include 'components/connect.php';
 
     session_start();
@@ -21,7 +22,7 @@
 
     if(isset($_GET['delete'])){
         $delete_id = $_GET['delete'];
-        $delete_order = $conn->("DELETE FROM `orders` WHERE id = ?");
+        $delete_order = $conn->prepare("DELETE FROM `orders` WHERE id = ?");
         $delete_order->execute([$delete_id]);
         header('location:placed_orders.php');
     }
@@ -53,11 +54,6 @@
                 $select_orders->execute();
                 if($select_orders->rowCount() > 0){
                     while($fecth_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
-
-                    }
-                }else{
-                    echo '<p class="empty">Nenhum pedido feito ainda!</p>';
-                }
             ?>
 
             <div class="box">
@@ -65,8 +61,35 @@
                 <p>Data: <span><?= $fecth_orders['placed_on'];?></span></p>
                 <p>Nome: <span><?= $fecth_orders['name'];?></span></p>
                 <p>Email: <span><?= $fecth_orders['email'];?></span></p>
+                <p>Número: <span><?= $fecth_orders['number'];?></span></p>
+                <p>Endereço: <span><?= $fecth_orders['address'];?></span></p>
+                <p>Total de produtos: <span><?= $fecth_orders['total_products'];?></span></p>
+                <p>Valor total do pedido: <span><?= $fecth_orders['total_price'];?></span></p>
+                <p>Tipo de pagamento: <span><?= $fecth_orders['method']; ?></span></p>
+                <form action="" method="POST">
+                    <input type="hidden" name="order_id" value="<?= $fecth_orders['id'];?>">
+                    <select name="payment_status" id="" class="drop-dow">
+                        <option value="" selected disabled><?= $fecth_orders['payment_status'];?></option>
+                        <option value="pending">Pendente</option>
+                        <option value="completed">Pago</option>
+                    </select>
+                    <div class="flex-btn">
+                        <input type="submit" value="Atualizar" class="btn" name="update_payment">
+                        <a href="placed_orders.php?delete=<?= $fecth_orders['id'];?>" class="delete-btn" onclick="return confirm('Deletar este pedido?');">Deletar</a>
+                    </div>
+                </form>
             </div>
+            <?php
+                    }
+                }else{
+                    echo '<p class="empty">Nenhum pedido feito ainda!</p>';
+                }
+            ?>
         </div>
     </section>
+    <!-- placed orders section ends  -->
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
