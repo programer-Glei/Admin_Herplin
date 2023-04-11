@@ -484,3 +484,23 @@ section{
         }
     }
 }
+
+.accounts{
+    .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 33rem);
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+
+        .box{
+            background-color: $--white;
+            border-radius: 0.5rem;
+            box-shadow: $box-shadow;
+            border: $border;
+            padding: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+        }
+    }
+}
