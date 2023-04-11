@@ -474,6 +474,12 @@ section{
             .drop-down{
                 width: 100%;
                 margin: 1rem 0;
+                background-color: $--light-bg;
+                padding: 1rem 1.4rem;
+                font-size: 2rem;
+                color: $--black;
+                border: $border;
+                border-radius: 0.5rem;
             }
         }
     }
