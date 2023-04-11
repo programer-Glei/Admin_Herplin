@@ -41,7 +41,36 @@
                 <p>Criar novo administrador</p>
                 <a href="register_admin.php" class="option-btn">Criar</a>
             </div>
+
+            <?php
+                $select_account = $conn->prepare("SELECT * FROM `admin`");
+                $select_account->execute();
+                if($select_account->rowCount() > 0){
+                    while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){
+            ?>
+            <div class="box">
+                <p>id de usuário: <span><?= $fetch_accounts['id']; ?></span></p>
+                <p>Nome de usuário: <span><?= $fetch_accounts['name']; ?></span> </p>
+                <div class="flex-btn">
+                    <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esta conta?')">Deletar</a>
+                    <?php
+                        if($fetch_accounts['id'] == $admin_id){
+                            echo '<a href="update_profile.php" class="option-btn">Atualizar</a>';
+                        }
+                    ?>
+                </div>
+            </div>
+            <?php
+                    }
+                }else{
+                    echo '<p class="empty">Nenhuma conta disponível</p>';
+                }
+            ?>
         </div>
     </section>
+    <!-- admins accounts section ends  -->
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
