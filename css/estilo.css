@@ -488,7 +488,7 @@ section {
   color: #34495e;
 }
 
-.placed-orders {
+.placed-orders .box-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (33rem)[auto-fit];
@@ -557,5 +557,15 @@ section {
   padding: 2rem;
   padding-top: 1rem;
   text-align: center;
+}
+
+.accounts .box-container .box p {
+  padding: 0.5rem 0;
+  font-size: 1.8rem;
+  color: #34495e;
+}
+
+.accounts .box-container .box p span {
+  color: #4834d4;
 }
 /*# sourceMappingURL=estilo.css.map */

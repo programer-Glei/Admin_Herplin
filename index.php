@@ -4,8 +4,6 @@
     session_start();
     if(isset($_POST['submit'])){
 
-        echo $_POST['submit'];
-
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_STRING);
         $pass = $_POST['pass'];
