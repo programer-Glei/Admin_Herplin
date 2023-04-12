@@ -24,9 +24,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Contas de usuários</title>
 </head>
 <body>
-    
+    <?php include 'components/admin_header.php' ?>
+
+    <!-- user accounts section starts -->
+    <section class="accounts">
+        <h1 class="heading">Contas de usuários</h1>
+        <div class="box-container">
+            <?php
+                $select_accounts = $conn->prepare("SELECT * FROM `users`");
+                $select_accounts->execute();
+                if($select_accounts->rowCount() > 0){
+                    
+                }
+            ?>
+        </div>
+    </section>
 </body>
 </html>
