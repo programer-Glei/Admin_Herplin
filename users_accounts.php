@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: text/html; charset=utf-8');
     include 'components/connect.php';
 
     session_start();
@@ -41,10 +42,24 @@
                 $select_accounts = $conn->prepare("SELECT * FROM `users`");
                 $select_accounts->execute();
                 if($select_accounts->rowCount() > 0){
-                    
+                    while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){
+            ?>
+            <div class="box">
+                <p>Id do usuário: <span><?= $fetch_accounts['id']; ?></span></p>
+                <p>Nome: <span><?= $fetch_accounts['name']; ?></span></p>
+                <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esta conta?');">Deletar</a>
+            </div>
+            <?php
+                    }
+                }else{
+                    echo '<p class="empty">Nenhuma conta disponível!</p>';
                 }
             ?>
         </div>
     </section>
+    <!-- user accounts section ends -->
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
