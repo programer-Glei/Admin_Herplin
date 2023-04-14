@@ -513,3 +513,32 @@ section{
         }
     }
 }
+
+.messages{
+    .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 33rem);
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+
+        .box{
+            background-color: $--white;
+            border-radius: 0.5rem;
+            box-shadow: $box-shadow;
+            border: $border;
+            padding: 2rem;
+            padding-top: 1rem;
+
+            p{
+                padding: 0.5rem 0;
+                font-size: 1.8rem;
+                color: $--black;
+
+                span{
+                    color: $--main-color;
+                }
+            }
+        }
+    }
+}
