@@ -31,7 +31,7 @@
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
-        $image_folder = 'uplaoded_img/'.$image;
+        $image_folder = '../Herplin_Restaurant/uploaded_img'.$image;
 
         if(!empty($image)){
             if($image_size > 2000000){
@@ -43,7 +43,7 @@
                 if(empty($old_image)){
                     $message[] = 'imagem atualizada!';
                 }else{
-                    unlink('uplaoded_img/'.$old_image);
+                    unlink('../Herplin_Restaurant/uploaded_img/'.$old_image);
                     $message[] = 'imagem atualizada!';
                 }
             }
@@ -79,7 +79,7 @@
         <form action="" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
             <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
-            <img src="uplaoded_img/<?= $fetch_products['image']; ?>" alt="">
+            <img src="../Herplin_Restaurant/uploaded_img<?= $fetch_products['image']; ?>" alt="">
             <span>Atualizar nome</span>
             <input type="text" required placeholder="Digitar nome do produto" name="name" maxlength="100" class="box" value="<?= $fetch_products['name']; ?>">
             <span>Atualizar preço</span>
