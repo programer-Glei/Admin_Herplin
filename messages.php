@@ -41,15 +41,26 @@
                 $select_messages = $conn->prepare("SELECT * FROM `messages`");
                 $select_messages->execute();
                 if($select_messages->rowCount() > 0){
-                    while($fetch_messages = $select_messages->fetch(PDO::FETCH_ASSOC))
-                }else{
-
-                }
+                    while($fetch_messages = $select_messages->fetch(PDO::FETCH_ASSOC)){
             ?>
             <div class="box">
-                <p>Nome: <span></span></p>
+                <p>Nome: <span><?= $fetch_messages['name']; ?></span></p>
+                <p>Número: <span><?= $fetch_messages['number']; ?></span></p>
+                <p>Email: <span><?= $fetch_messages['email']; ?></span></p>
+                <p>Mensagem: <span><?= $fetch_messages['message'];?></span></p>
+                <a href="messages.php?delete=<?= $fetch_messages['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esta mensagem?');">Deletar</a>
             </div>
+            <?php
+                     }
+                    }else{
+                        echo '<p class="empty">Nenhuma mensagem</p>';
+                    }
+            ?>
         </div>
     </section>
+    <!-- messages section ends -->
+
+    <!-- custom js file link -->
+    <script src="java/admin_script.js"></script>
 </body>
 </html>
