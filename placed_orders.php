@@ -62,7 +62,7 @@
                 <p>Nome: <span><?= $fecth_orders['name'];?></span></p>
                 <p>Email: <span><?= $fecth_orders['email'];?></span></p>
                 <p>Número: <span><?= $fecth_orders['number'];?></span></p>
-                <p>Endereço: <span><?= $fecth_orders['address'];?></span></p>
+                <p>Endereço: <span><?= $fecth_orders['addres'];?></span></p>
                 <p>Total de produtos: <span><?= $fecth_orders['total_products'];?></span></p>
                 <p>Valor total do pedido: <span><?= $fecth_orders['total_price'];?></span></p>
                 <p>Tipo de pagamento: <span><?= $fecth_orders['method']; ?></span></p>
